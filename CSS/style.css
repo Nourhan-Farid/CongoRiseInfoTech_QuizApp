@@ -1,0 +1,224 @@
+/* Made by Nourhan Farid Abo Baker */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ef5e23;
+    --animate-duration: 800ms;
+}
+
+body {
+    min-height: 100vh;
+    background-size: 30%;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0'%3E%3Cstop offset='0' stop-color='%230FF'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F00'/%3E%3Cstop offset='1' stop-color='%23FC0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='12.54'%3E%3Cpath transform='translate(0 0)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='4.18' transform='rotate(0 800 450)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(0 0)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='3.8'%3E%3Cpath transform='translate(0 0)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='8.36' transform='rotate(0 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='rotate(0 1400 132)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Changa", sans-serif;
+    overflow: hidden;
+}
+
+/* ======> Global Rules */
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.text-green {
+    color: #a1c349;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.correct,
+.correct:hover {
+    --main-color: #7cb518 !important;
+    background-color: var(--main-color);
+    color: #fff !important;
+}
+
+.wrong,
+.wrong:hover {
+    --main-color: #bf0603 !important;
+    background-color: var(--main-color);
+    color: #fff !important;
+}
+
+.score-color {
+    color: #434371;
+}
+
+.btn-category,
+.btn-questions {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #a1c349;
+    --bs-btn-border-color: #a1c349;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #a1c349;
+    --bs-btn-hover-border-color: #a1c349;
+}
+
+/* .btn-questions {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ef5e23;
+    --bs-btn-border-color: #ef5e23;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ef5e23;
+    --bs-btn-hover-border-color: #ef5e23;
+} */
+
+.btn-start {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ef5e23;
+    --bs-btn-border-color: #ef5e23;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ef5d23db;
+    --bs-btn-hover-border-color: #ef5d23db;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+
+.mainTiTleDiv {
+    text-align: center;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: white;
+    border: 0px solid white;
+    padding: 15px 25px;
+    overflow: hidden !important;
+    position: relative !important;
+    box-shadow: -5px 2px 54px -9px rgb(188, 188, 188);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/* #613dc1 #BFFF70*/
+.mainTiTleDiv::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: scale(2) translate(-50%, -50%);
+    scale: 1.1;
+    background-image: linear-gradient(#fc5130, #FFC700);
+    animation: rotate 7s infinite linear;
+    border-radius: inherit;
+    -webkit-transform: scale(2) translate(-50%, -50%);
+    -moz-transform: scale(2) translate(-50%, -50%);
+    -ms-transform: scale(2) translate(-50%, -50%);
+    -o-transform: scale(2) translate(-50%, -50%);
+}
+
+.mainTiTleDiv::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background: white;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+.MainContent {
+    position: relative;
+    z-index: 2 !important;
+}
+
+.MainContent h1 {
+    color: #fc5130;
+}
+
+/* ======> Question Card */
+.question {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+}
+
+.question h2 {
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+}
+
+.choices {
+    gap: 10px;
+}
+
+.choices li {
+    --main-color: #ef5e23;
+    width: calc((100% - 10px) / 2);
+    font-size: 19px;
+    font-weight: 600;
+    border-radius: 100vh;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding: 5px 12px;
+    transition: background-color 350ms, color 350ms;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices li:hover {
+    background-color: var(--main-color);
+    color: #f1f1f1;
+}
+
+.question i {
+    cursor: pointer;
+}
+
+.form-floating {
+    border: 3px solid #ef5e23;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.again {
+    width: 140px;
+    height: 45px;
+}
+
+
+.again:hover,
+.again:active {
+    color: white !important;
+}
